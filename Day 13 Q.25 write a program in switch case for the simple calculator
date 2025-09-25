@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+   char op;
+   int a,b;
+   printf("Enter the arthimatic operator two be performed between+, -, *, /, %");
+   scanf("%c",&op);
+   printf("Enter the two numbers on which we need to perform:");
+   scanf("%d%d",&a,&b);
+   switch(op)
+   {
+       case '+':
+       printf("The sum of the two num is: %d", a+b);
+       break;
+       case '-':
+       printf("The subtraction is: %d", a-b);
+       break;
+       case '*':
+       printf("The multiplication is: %d", a*b);
+       break;
+       case '/':
+       printf("The quotient is: %d", a/b);
+       break;
+       case '%':
+       printf("The remainder is: %d", a%b);
+       break;
+       default:
+       printf("You have entered Wrong input");
+       break;
+   }
+    return 0;
+
+}
