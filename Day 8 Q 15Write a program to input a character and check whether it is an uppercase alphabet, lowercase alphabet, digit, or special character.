@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    char ch;
+    printf("enter a character\n");
+    scanf("%c",&ch);
+if(ch>='A'&& ch<='Z')
+{
+    printf("uppercase alphabet\n");
+}
+else if(ch>='a'&& ch<='z')
+{
+    printf("lowercase alphabet\n");
+}
+else if(ch>='0'&& ch<='9')
+{
+    printf("digits\n");
+}
+else
+{
+    printf("special characters\n");
+}
+    return 0;
+}
