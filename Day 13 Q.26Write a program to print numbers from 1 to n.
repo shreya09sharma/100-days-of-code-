@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code herent num;
+    int n;
+    int sum=0;
+    int isodd=0;
+     printf("enter a number\n",n);
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++)
+    {
+        
+        printf("the numbers are is%d\n", i);
+        }
+        
+    return 0;
+}
