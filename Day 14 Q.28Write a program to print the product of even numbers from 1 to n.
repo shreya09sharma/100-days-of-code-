@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+int num;
+    int n;
+    int product=1;
+    int isprod=0;
+     printf("enter a number\n",n);
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++)
+    {
+        if(i%2==0)
+        {
+            product=product*i;
+            isprod=1;
+        }
+    }
+
+        if(isprod)
+        {
+        printf("the product of even numbers is%d\n", product);
+        }
+        else
+        {
+            printf("no even numbers in the range\n");
+        }
+        
+    return 0;
+}
