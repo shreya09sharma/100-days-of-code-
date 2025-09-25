@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+int num;
+    int n;
+    int sum=0;
+    int isodd=0;
+     printf("enter a number\n",n);
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++)
+    {
+        if(i%2!=0)
+        {
+            sum=sum+i;
+            isodd=1;
+        }
+    }
+
+        if(isodd)
+        {
+        printf("the sum of odd numbers is%d\n", sum);
+        }
+        else
+        {
+            printf("no odd numbers in the range\n");
+        }
+        
+    return 0;
+}
