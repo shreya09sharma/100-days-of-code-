@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    // Write C code here
+    double a;
+    double b;
+     double c;
+     double dis;
+     double root1,root2;
+     double realpart;
+     double imagpart;
+     dis=b*b-4*a*c;
+     
+
+    printf("enter first number\n");
+    scanf("%lf", &a);
+    printf("enter second number\n");
+    scanf("%lf", &b);
+    printf("enter third number\n");
+    scanf("%lf", &c);
+    if (dis > 0) {
+        root1 = (-b + sqrt(dis)) / (2 * a);
+        root2 = (-b - sqrt(dis)) / (2 * a);
+        printf("Roots are real and different: %lf, %lf \n", root1, root2);
+    }
+    
+    else if (dis == 0) {
+        root1 = root2 = -b / (2 * a);
+        printf("Roots are real and same: %lf\n", root1);
+    }
+    
+    else {
+        realpart = -b / (2 * a);
+        imagpart = sqrt(-dis) / (2 * a);
+        printf("Roots are complex: %lf + %lf and %lf - %lf\n", realpart, imagpart, realpart, imagpart);
+    }
+
+    return 0;
+}
+
