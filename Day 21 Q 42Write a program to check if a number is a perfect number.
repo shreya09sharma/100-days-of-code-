@@ -1,0 +1,28 @@
+int main() {
+    // Write C code here
+    int num;
+
+    int sum=0;
+
+    
+    printf("enter a number\n");
+    scanf("%d", &num);
+    
+    
+            for(int i=1;i<num;i++)
+            {
+                if(num%i==0)
+                sum=sum+i;
+                
+            }
+if(sum==num)
+{
+       printf("perfect number");
+}
+else
+{
+    printf("not  a perfect number");
+}
+  
+    return 0;
+}
