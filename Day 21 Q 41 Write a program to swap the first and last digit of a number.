@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    // Write C code here
+    
+int num, swapped_num;
+    int first_digit, last_digit;
+    int digits_count = 0;
+    int temp_num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num == 0) {
+        printf("Swapped number: 0\n");
+        return 0;
+    }
+
+    last_digit = num % 10;
+
+    temp_num = num;
+    while (temp_num != 0) {
+        temp_num /= 10;
+        digits_count++;
+    }
+
+    first_digit = num;
+    while (first_digit >= 10) {
+        first_digit /= 10;
+    }
+
+
+    swapped_num = num - (first_digit * pow(10, digits_count - 1)); 
+    swapped_num = swapped_num - last_digit; 
+    swapped_num = swapped_num + (first_digit); 
+    swapped_num = swapped_num + (last_digit * pow(10, digits_count - 1)); 
+
+    printf("Swapped number: %d\n", swapped_num);
+    
+
+    return 0;
+}
