@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int num;
+
+    int prod=1;
+
+    
+    printf("enter a number\n");
+    scanf("%d", &num);
+while(num>0)
+{
+    int d=num%10;
+    
+    if(d%2!=0)
+   {
+       prod=prod*d;
+   }
+    num=num/10;
+    
+}
+
+printf("the product of odd digits%d\n",prod);
+   
+    return 0;
+}
