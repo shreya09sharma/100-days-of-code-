@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int n;
+    int ecount=0;
+    int ocount=0;
+    
+printf("enter the elements of an array");
+scanf("%d", &n);
+int arr[n];
+for(int i=0;i<n;i++)
+{
+    printf("elements %d",i+1);
+    scanf("%d" ,&arr[i]);
+    
+}
+
+for(int i=0;i<n;i++)
+{
+    printf("%d", arr[i]);
+    if(arr[i]%2==0)
+    {
+
+        ecount++;
+    }
+    else{
+    
+    ocount++;
+        }
+}
+        printf("\n even numbers=%d\n",ecount);
+        printf("\n odd numbers element=%d\n", ocount);
+    
+
+    return 0;
+}
+    
+    
