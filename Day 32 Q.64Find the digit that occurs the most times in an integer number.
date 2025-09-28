@@ -1,0 +1,31 @@
+// Online C compiler to run C program online
+//Find the digit that occurs the most times in an integer number.
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int num;
+    int digitcount[10]={0};
+    printf("enter the number\n");
+    scanf("%d", &num);
+    while(num>0)
+    {
+    int d=num%10;
+    digitcount[d]++;
+    num=num/10;
+    }
+    int maxCount = 0;
+    int mostFrequentDigit = 0;
+    for(int i = 0; i < 10; i++) 
+    {
+        if(digitcount[i] > maxCount)
+        {
+            maxCount = digitcount[i];
+            mostFrequentDigit = i;
+        }
+    }
+     printf("The digit that occurs the most is: %d\n", mostFrequentDigit);
+    printf("It appears %d times.\n", maxCount);
+
+    return 0;
+}
