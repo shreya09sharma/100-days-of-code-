@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+  
+    int first = -999999;
+    int second = -999999;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > first) {
+          
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+
+    if (second == -999999) {
+        printf("There is no second largest element (all elements may be equal).\n");
+    } else {
+        printf("The second largest element is: %d\n", second);
+    }
+
+    return 0;
+}
