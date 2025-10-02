@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    int matrix[10][10];
+    int n, m;
+    int i, j;
+
+    
+    printf("Enter number of rows: ");
+    scanf("%d", &n);
+    printf("Enter number of columns: ");
+    scanf("%d", &m);
+
+    
+    printf("Enter matrix elements:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    printf("Zig-Zag Diagonal Traversal:\n");
+
+    
+    for (int d = 0; d <= n + m - 2; d++) {
+        
+        int row, col;
+
+        if (d % 2 == 0) {
+            
+            row = (d < n) ? d : n - 1;
+            col = d - row;
+            while (row >= 0 && col < m) {
+                printf("%d ", matrix[row][col]);
+                row--;
+                col++;
+            }
+        } else {
+            
+            col = (d < m) ? d : m - 1;
+            row = d - col;
+            while (col >= 0 && row < n) {
+                printf("%d ", matrix[row][col]);
+                row++;
+                col--;
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
