@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int matrix[10][10];
+    int diag[10];  // to store diagonal elements
+    int n, i, j, k;
+    int isDistinct = 1;
+
+    
+    printf("Enter size of square matrix (max 10): ");
+    scanf("%d", &n);
+
+    
+    printf("Enter the elements of the matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+  
+    for (i = 0; i < n; i++) {
+        diag[i] = matrix[i][i];
+
+        
+        for (k = 0; k < i; k++) {
+            if (diag[i] == diag[k]) {
+                isDistinct = 0;
+                break;
+            }
+        }
+
+        if (!isDistinct)
+            break;
+    }
+
+    
+    if (isDistinct==1)
+        printf("Diagonal elements are distinct.\n");
+    else
+        printf("Diagonal elements are NOT distinct.\n");
+
+    return 0;
+}
