@@ -28,7 +28,7 @@ for(pos =0;pos<n;pos++)
     if(arr[pos]>ne)
     break;
 }
-for(i=n;i>n;i--)
+for(i=n;i>pos;i--)
 {
     arr[i]=arr[i-1];
 }
