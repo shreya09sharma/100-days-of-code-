@@ -1,0 +1,36 @@
+#include <stdio.h> 
+#include <string.h>
+
+int main() {
+    char str[100];
+    char ch;
+    int c = 0;  
+    int f = 0;  
+    int t = 0;  
+    printf("enter string\n");
+    scanf("%[^\n]", str);
+
+    int len = strlen(str);
+    for (int i = 0; i < len; i++) {
+        ch = str[i];
+
+        if (ch == ' ') {
+            c++;
+        }
+        if (ch>='0' && ch<='9')
+        {
+            f++;
+        }
+    
+        if (!((ch >= 'A' && ch <= 'Z') || 
+              (ch >= 'a' && ch <= 'z') || 
+              (ch >= '0' && ch <= '9') || 
+              (ch == ' '))) {
+            t++;
+        }
+    }
+
+    printf("The spaces, selected special characters, and all other special characters are %d %d %d\n", c, f, t);
+
+    return 0;
+}
