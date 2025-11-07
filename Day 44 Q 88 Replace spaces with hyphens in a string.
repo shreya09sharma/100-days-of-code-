@@ -1,0 +1,24 @@
+#include <stdio.h> 
+#include <string.h>
+
+int main() {
+    char str[100];
+    char ch;
+    
+    printf("enter string\n");
+    scanf("%[^\n]", str);
+
+    int len = strlen(str);
+    for (int i = 0; i < len; i++)
+    {
+        ch = str[i];
+
+        if (ch == ' ') 
+        {
+            str[i]='-';
+        }
+    }
+    printf("The replaced string is %s\n",str);
+
+    return 0;
+}
