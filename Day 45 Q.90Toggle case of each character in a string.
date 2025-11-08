@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    char c;
+    char ch;
+    
+
+    printf("Enter a string\n");
+    scanf("%[^\n]", str);
+
+    int len = strlen(str);
+    for (int i = 0; i < len; i++) 
+    {
+        ch=str[i];
+        if(ch>='a'&& ch<='z' )
+        {
+            ch=ch-32;
+        }
+        else
+        {
+            ch=ch+32;
+        }
+    str[i]=ch;
+}
+        printf("The toggle case is is %s\n", str);
+    return 0;
+}
