@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    char c;
+    char ch;
+    int j=0;
+    int freq[256]={0};
+
+    printf("Enter a string\n");
+    scanf("%[^\n]", str);
+
+    int len = strlen(str);
+    for (int i = 0; i < len; i++) 
+    {
+        ch=str[i];
+       if(ch>='A' && ch<='Z')
+       {
+           ch=ch+32;
+       }
+       freq[ch]++;
+    }
+        int max=0;
+        char m;
+        for(int i=0;i<256;i++)
+        {
+            
+            if(freq[i]>max)
+            {
+                max=freq[i];
+                m=(char)i;
+            }
+        }
+        printf("The most occurred character is: %c\n", m);
+    return 0;
+}
