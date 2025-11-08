@@ -1,0 +1,25 @@
+#include <string.h>
+
+int main() {
+    char str[100];
+    char c;
+    char ch;
+    int freq[256] = {0};
+
+    printf("Enter a string\n");
+    scanf("%[^\n]", str);
+
+    int len = strlen(str);
+    for (int i = 0; i < len; i++) 
+    {
+        ch=str[i];
+        freq[(int)str[i]]++;  
+    }
+
+    printf("Enter a character\n");
+    scanf(" %c", &c);  
+
+    printf("The frequency of '%c' is %d\n", c, freq[(int)c]);
+
+    return 0;
+}
