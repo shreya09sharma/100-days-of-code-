@@ -1,0 +1,46 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char str1[100];
+    char str2[100];
+    char ch;
+    char c;
+    int i,j;
+    int freq[256]={0};
+    int f[256]={0};
+    printf("enter string1\n");
+    scanf("%s" , str1);
+    printf("enter string2\n");
+    scanf("%s", str2);
+    for(int i=0;str1[i]!='\0';i++)
+    {
+        ch=str1[i];
+        freq[(int)str1[i]]++;
+        
+    }
+    for(int j=0;str2[j]!='\0';j++)
+    {
+        c=str2[j];
+        f[(int)str2[j]]++;
+        
+    }
+    int found=1;
+    for(int a=0;a<256;a++)
+    {
+        
+    if(freq[a]!=f[a])
+    {
+        found=0;
+        break;
+    }
+    }
+    if(found==1)
+    
+        printf("the strings are anagram\n");
+    else
+    
+        printf("the strings are not anagram\n");
+    
+    return 0;
+}
