@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of elements of the sorted array:\n");
+    scanf("%d", &n);
+
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        printf("Element %d = ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nThe elements of the array are:\n");
+    for(int i = 0; i < n; i++) {
+        printf("%d\n", arr[i]);
+    }
+
+    int target;
+    printf("Enter target value: ");
+    scanf("%d", &target);
+
+    int first = -1, last = -1;
+
+    
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == target) {
+            first = i;
+            break;
+        }
+    }
+
+    
+    for(int i = n - 1; i >= 0; i--) {
+        if(arr[i] == target) {
+            last = i;
+            break;
+        }
+    }
+
+    printf("First and Last occurrence indices: %d %d\n", first, last);
+
+    return 0;
+}
