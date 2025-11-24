@@ -1,37 +1,37 @@
-
+// Online C compiler to run C program online
 #include <stdio.h>
 #include <string.h>
-
-int main() {
-    char str[100];
-    printf("Enter a sentence:\n");
-    scanf("%[^\n]", str);
-
-    int len = strlen(str);
-    int maxLength = 0;      
-    int currentLength = 0;   
-    int startIndex = 0;      
-    int maxStartIndex = 0;   
-
-    for (int i = 0; i <= len; i++) {  
-        if (str[i] != ' ' && str[i] != '\0') {
-            currentLength++;  
-        } else {
-        
-            if (currentLength > maxLength) {
-                maxLength = currentLength;
-                maxStartIndex = startIndex;
+int main() 
+{
+    int n=0,x=0,max=1;
+    char temp[100],word[100];
+    char string[200];
+    printf("Enter the word 1");
+    scanf("%[^\n]",&string);
+    for(int i=0;i<=strlen(string);i++)
+    {
+        if(string[i]==' ' || string[i]=='\0')
+        {
+            x=0;
+            for(int j=n;j<i;j++)
+            {
+                temp[x]=string[j];
+                x++;
             }
-            currentLength = 0;          
-            startIndex = i + 1;
+            temp[x]='\0';
+            n=i+1;
+            printf("%s\n",temp);
+            if(max<strlen(temp))
+            {
+                max=strlen(temp);
+                for(int k=0;k<strlen(temp);k++)
+                {
+                    word[k]=temp[k];
+                }
+            }
+            
         }
     }
-
-    printf("Longest word: ");
-    for (int i = 0; i < maxLength; i++) {
-        printf("%c", str[maxStartIndex + i]);
-    }
-    printf("\nLength: %d\n", maxLength);
-
+    printf("%d%s",max,word);
     return 0;
 }
