@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int num[n];
+    for(int i = 0; i < n; i++) {
+        printf("Element %d = ", i+1);
+        scanf("%d", &num[i]);
+    }
+
+    int answer[n];
+
+    
+    for(int i = 0; i < n; i++) 
+    {
+        int prod = 1;
+        for(int j = 0; j < n; j++) 
+        {
+            if(j != i)
+            {
+                prod =prod* num[j];
+            }
+        }
+        answer[i] = prod;
+    }
+
+    printf("Product array except self: ");
+    for(int i = 0; i < n; i++) 
+    {
+        printf("%d ", answer[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
