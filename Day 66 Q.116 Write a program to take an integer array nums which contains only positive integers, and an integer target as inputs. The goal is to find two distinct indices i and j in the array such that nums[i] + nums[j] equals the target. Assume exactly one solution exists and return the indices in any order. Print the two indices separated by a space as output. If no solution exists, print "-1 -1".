@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int n, s;
+
+    
+    printf("Enter size of an array\n ");
+    scanf("%d", &n);
+    int arr[n];
+
+    for(int i = 0; i < n; i++) {
+        printf("Element %d = ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+int f=0;
+    int target;
+    printf("Enter the target value\n ");
+    scanf("%d", &target);
+    for(int i=0;i<n;i++)
+    {
+        if((arr[i]+arr[i+1])==target)
+        {
+            f=1;
+            
+        }
+    
+    if(f==1)
+    {
+        printf("The indices are %d %d", i,i+1);
+        break;
+    }
+    }
+    
+    return 0;
+}
