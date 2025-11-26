@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    int n, s;
+
+    
+    printf("Enter size of first array\n ");
+    scanf("%d", &n);
+    int arr[n];
+
+    for(int i = 0; i < n; i++) {
+        printf("Element %d = ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    
+    printf("Enter size of second array\n ");
+    scanf("%d", &s);
+    int array[s];
+
+    for(int i = 0; i < s; i++) {
+        printf("Element %d = ", i + 1);
+        scanf("%d", &array[i]);
+    }
+
+    
+    int merged[n + s];
+    int i = 0, j = 0, k = 0;
+
+    while (i < n && j < s) {
+        if (arr[i] < array[j])
+            merged[k++] = arr[i++];
+        else
+            merged[k++] = array[j++];
+    }
+
+    
+    while (i < n)
+        merged[k++] = arr[i++];
+
+    while (j < s)
+        merged[k++] = array[j++];
+
+
+    printf("\nMerged Sorted Array:\n");
+    for (int x = 0; x < n + s; x++)
+        printf("%d\n", merged[x]);
+
+    return 0;
+}
