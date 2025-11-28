@@ -2,31 +2,23 @@
 
 int main() {
     FILE *fp;
-    char name[50];
-    int age;
+    char line[100];
 
-    // Open file in write mode
-    fp = fopen("info.txt", "w");
+    // Open the file in read mode
+    fp = fopen("info.txt", "r");
 
     if (fp == NULL) {
-        printf("Error! Could not create file.\n");
-        return 1; // Exit program
+        printf("Error! File not found.\n");
+        return 1;
     }
 
-    // Taking user input
-    printf("Enter your name: ");
-    scanf("%s", name);
+    // Reading file content line by line
+    while (fgets(line, sizeof(line), fp) != NULL) {
+        printf("%s", line);
+    }
 
-    printf("Enter your age: ");
-    scanf("%d", &age);
-
-    // Writing to file
-    fprintf(fp, "Name: %s\nAge: %d\n", name, age);
-
-    // Close file
+    // Closing the file
     fclose(fp);
-
-    printf("File created successfully! Data written to info.txt\n");
 
     return 0;
 }
