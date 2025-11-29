@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Nested Date structure
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+// Employee structure
+struct Employee {
+    char name[50];
+    int emp_id;
+    float salary;
+    struct Date joining_date;
+};
+
+int main() {
+    struct Employee e;
+    FILE *fp;
+
+    // Input Employee details
+    printf("Enter Employee Name: ");
+    scanf("%s", e.name);
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &e.emp_id);
+
+    printf("Enter Salary: ");
+    scanf("%f", &e.salary);
+
+    printf("Enter Joining Date (dd mm yyyy): ");
+    scanf("%d %d %d", &e.joining_date.day, &e.joining_date.month, &e.joining_date.year);
+
+    // Write Employee data to binary file
+    fp = fopen("employee.dat", "wb");  // write binary
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    fwrite(&e, sizeof(s
